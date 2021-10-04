@@ -4,7 +4,7 @@
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
-  --ion-color-primary: #3880ff;
+  --ion-color-primary: #008DF7;
   --ion-color-primary-rgb: 56, 128, 255;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
@@ -74,9 +74,16 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  --ion-color-chat: #016698;
+  --ion-color-chat-rgb: 1,102,152;
+  --ion-color-chat-contrast: #ffffff;
+  --ion-color-chat-contrast-rgb: 255,255,255;
+  --ion-color-chat-shade: #015a86;
+  --ion-color-chat-tint: #1a75a2;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   /*
    * Dark Colors
    * -------------------------------------------
@@ -145,6 +152,13 @@
     --ion-color-light-contrast-rgb: 255,255,255;
     --ion-color-light-shade: #1e2023;
     --ion-color-light-tint: #383a3e;
+
+    --ion-color-chat: #016698;
+    --ion-color-chat-rgb: 1,102,152;
+    --ion-color-chat-contrast: #ffffff;
+    --ion-color-chat-contrast-rgb: 255,255,255;
+    --ion-color-chat-shade: #015a86;
+    --ion-color-chat-tint: #1a75a2;
   }
 
   /*
@@ -179,15 +193,9 @@
     --ion-color-step-900: #e6e6e6;
     --ion-color-step-950: #f2f2f2;
 
+    --ion-toolbar-background: #0d0d0d;
+
     --ion-item-background: #000000;
-
-    --ion-card-background: #1c1c1d;
-  }
-
-  .ios ion-modal {
-    --ion-background-color: var(--ion-color-step-100);
-    --ion-toolbar-background: var(--ion-color-step-150);
-    --ion-toolbar-border-color: var(--ion-color-step-250);
   }
 
 
@@ -230,7 +238,9 @@
     --ion-toolbar-background: #1f1f1f;
 
     --ion-tab-bar-background: #1f1f1f;
+  }
 
-    --ion-card-background: #1e1e1e;
+  ion-title.title-large {
+    --color: white;
   }
 }

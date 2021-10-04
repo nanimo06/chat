@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="chat">
+    <ion-buttons slot="end">
+      <ion-icon name="add-circle"
+                size="large"
+                border-radius
+                [routerLink]="['/users']"
+      ></ion-icon>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Conversaciones</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar animated
+                   [(ngModel)]="filter"
+                   placeholder="Buscar"
+                   (ionChange)="searchConversation()"
+    >
+    </ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main_content_div">
+
+    <div class="white_div">
+
+      <div *ngFor="let conversation of filtered_conversations"
+           [routerLink]="['/conversation', conversation.user_id]"
+           class="card_div"
+      >
+        <div class="user_detail">
+          <ion-label class="username">
+            {{conversation.user.name}} {{conversation.user.surname}}
+            <span class="date_last_message">{{conversation.date_last_message}} </span>
+            <ion-icon name="arrow-dropright"></ion-icon>
+          </ion-label>
+          <div *ngIf="!!conversation.new_messages"
+            class="new_messages"
+          >
+            {{conversation.new_messages}}
+          </div>
+          <ion-label class="message">{{conversation.last_message}}</ion-label>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</ion-content>

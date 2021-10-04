@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="chat">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/conversations"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Usuarios</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar animated
+                   [(ngModel)]="filter"
+                   placeholder="Buscar"
+                   (ionChange)="searchUsers()"
+    >
+    </ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main_content_div">
+
+    <div class="white_div">
+
+      <div *ngFor="let user of filtered_users"
+           [routerLink]="['/conversation', user.id]"
+           class="card_div"
+      >
+        <div class="user_detail">
+          <ion-label class="username">
+            {{user.name}} {{user.surname}}
+            <span class="date_last_message">{{user.date_last_message}} </span>
+            <ion-icon name="arrow-dropright"></ion-icon>
+          </ion-label>
+          <div *ngIf="!!user.new_messages"
+               class="new_messages"
+          >
+            {{user.new_messages}}
+          </div>
+          <ion-label class="message">{{user.last_message}}</ion-label>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</ion-content>

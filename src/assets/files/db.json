@@ -1,0 +1,224 @@
+{
+  "database": "chat_db",
+  "version": 1,
+  "encrypted": false,
+  "mode": "full",
+  "tables": [
+    {
+      "name": "users",
+      "schema": [
+        {
+          "column": "id",
+          "value": "INTEGER PRIMARY KEY NOT NULL"
+        },
+        {
+          "column": "name",
+          "value": "TEXT NOT NULL"
+        },
+        {
+          "column": "surname",
+          "value": "TEXT NOT NULL"
+        },
+        {
+          "column": "username",
+          "value": "TEXT"
+        },
+        {
+          "column": "image",
+          "value": "TEXT"
+        }
+      ],
+      "values": [
+        [
+          1,
+          "Lorna",
+          "Leahy",
+          "lleahy0",
+          ""
+        ],
+        [
+          2,
+          "Ebba",
+          "Robertucci",
+          "erobertucci1",
+          ""
+        ],
+        [
+          3,
+          "Cathlene",
+          "Greatbank",
+          "cgreatbank2",
+          ""
+        ],
+        [
+          4,
+          "Der",
+          "Orr",
+          "dorr3",
+          ""
+        ],
+        [
+          5,
+          "Nari",
+          "Balazin",
+          "nbalazin4",
+          ""
+        ],
+        [
+          6,
+          "Jackson",
+          "Vogel",
+          "jvogel5",
+          ""
+        ],
+        [
+          7,
+          "Willie",
+          "Fogel",
+          "wfogel6",
+          ""
+        ],
+        [
+          8,
+          "Deena",
+          "Brecher",
+          "dbrecher7",
+          ""
+        ],
+        [
+          9,
+          "Osmond",
+          "Bishop",
+          "obishop8",
+          ""
+        ],
+        [
+          10,
+          "Lesya",
+          "Monte",
+          "lmonte9",
+          ""
+        ]
+      ]
+    },
+    {
+      "name": "conversations",
+      "schema": [
+        {
+          "column": "id",
+          "value": "INTEGER PRIMARY KEY NOT NULL"
+        },
+        {
+          "column": "user_id",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "date",
+          "value": "TEXT NOT NULL"
+        },
+        {
+          "column": "time",
+          "value": "TEXT NOT NULL"
+        },
+        {
+          "column": "sent",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "read",
+          "value": "INTEGER NOT NULL"
+        },
+        {
+          "column": "message",
+          "value": "TEXT NOT NULL"
+        },
+        {
+          "column": "reference_id",
+          "value": "INTEGER"
+        },
+        {
+          "column": "geographic_location",
+          "value": "INTEGER"
+        },
+        {
+          "column": "deleted_at",
+          "value": "TEXT"
+        },
+        {
+          "foreignkey": "user_id",
+          "value": "REFERENCES users(id)"
+        }
+      ],
+      "values": [
+        [
+          1,
+          2,
+          "2021-09-29",
+          "12:25:54",
+          1,
+          0,
+          "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae",
+          3,
+          0,
+          null
+        ],
+        [
+          1,
+          3,
+          "2021-09-29",
+          "12:25:54",
+          1,
+          0,
+          "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae",
+          3,
+          0,
+          null
+        ],[
+          1,
+          2,
+          "2021-09-29",
+          "12:25:54",
+          0,
+          1,
+          "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae",
+          3,
+          0,
+          null
+        ],[
+          1,
+          4,
+          "2021-09-29",
+          "12:25:54",
+          1,
+          0,
+          "Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae",
+          3,
+          0,
+          null
+        ],[
+          1,
+          2,
+          "2021-09-29",
+          "12:25:54",
+          0,
+          0,
+          "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus",
+          3,
+          0,
+          null
+        ],[
+          1,
+          4,
+          "2021-09-29",
+          "12:25:54",
+          1,
+          0,
+          "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis",
+          3,
+          0,
+          null
+        ]
+      ]
+    }
+  ]
+}

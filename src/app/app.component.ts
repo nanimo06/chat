@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {LoadingController, Platform} from '@ionic/angular';
+import {SplashScreen} from '@ionic-native/splash-screen/ngx';
+import {StatusBar} from '@ionic-native/status-bar/ngx';
+import {DatabaseService} from './services/database.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -6,13 +11,33 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Inbox', url: '/folder/Inbox', icon: 'mail' },
-    { title: 'Outbox', url: '/folder/Outbox', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/folder/Favorites', icon: 'heart' },
-    { title: 'Archived', url: '/folder/Archived', icon: 'archive' },
-    { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
-    { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
+    {title: 'Perfil', url: '/profile', icon: 'person'}
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
-  constructor() {}
+
+  constructor(
+    private platform: Platform,
+    private splashScreen: SplashScreen,
+    private statusBar: StatusBar,
+    private databaseService: DatabaseService,
+    private loadingCtrl: LoadingController
+  ) {
+    this.initializeApp();
+  }
+
+  async initializeApp() {
+    console.log('initializeApp')
+    this.platform.ready().then(async () => {
+      const loading = await this.loadingCtrl.create();
+      await loading.present();
+      await this.databaseService.init();
+      this.databaseService.dbReady.subscribe(isReady => {
+        if (isReady) {
+          loading.dismiss();
+          this.statusBar.styleDefault();
+          this.splashScreen.hide();
+        }
+      });
+    });
+  }
 }

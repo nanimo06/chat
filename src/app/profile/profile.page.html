@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar color="chat">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/conversations"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="main_content_div">
+
+    <div class="user_back bg_image" [style.backgroundImage]="'url(assets/images/user.jpg)'"></div>
+
+    <div class="form_div">
+      <ion-item>
+        <ion-label position="floating">Nombres</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Apellidos</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Username</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Fecha de nacimiento</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    </div>
+
+    <div class="gray_div">
+      <ion-label>INFORMACIÓN PRIVADA</ion-label>
+    </div>
+
+    <div class="form_div">
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item style="position: relative;">
+        <ion-label position="floating">Número de celular</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+
+      <div class="gender_div">
+        <div class="f_div">
+          <ion-label>Genero</ion-label>
+        </div>
+
+        <ion-radio-group mode="md">
+          <div class="s_div">
+            <div style="display: flex;">
+              <ion-label>Hombre</ion-label>
+              <ion-radio value="Male"></ion-radio>
+            </div>
+            <div style="display: flex;">
+              <ion-label>Mujer</ion-label>
+              <ion-radio value="Female"></ion-radio>
+            </div>
+          </div>
+        </ion-radio-group>
+
+      </div>
+    </div>
+
+  </div>
+</ion-content>

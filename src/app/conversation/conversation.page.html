@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="chat">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/conversations"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">{{conversation.user?.name}} {{conversation.user?.surname}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content #content>
+  <div class="main_content_div" id="messages-content">
+
+    <span *ngFor="let message of conversation.messages">
+
+      <div class="left_div" *ngIf="message.sent">
+        <div class="inner_div">
+          <div class="msg_div">
+            <ion-label>{{message.message}}</ion-label>
+          </div>
+        </div>
+      </div>
+
+      <div class="right_div" *ngIf="!message.sent">
+        <div class="inner_div">
+          <div class="msg_div">
+            <ion-label>{{message.message}}</ion-label>
+          </div>
+        </div>
+      </div>
+
+    </span>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <div class="footer_div">
+    <div class="input_div">
+      <ion-input type="text" placeholder="Escriba un mensaje"></ion-input>
+      <ion-icon name="pin" class="attach"></ion-icon>
+      <ion-icon name="send" class="send"></ion-icon>
+    </div>
+  </div>
+</ion-footer>

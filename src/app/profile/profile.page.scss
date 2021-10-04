@@ -1,0 +1,74 @@
+.main_content_div {
+  width: 100%;
+  padding-top: 16px;
+
+  ion-label {
+    display: block;
+  }
+
+  .user_back {
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    border: 5px solid white;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.5);
+    display: block;
+    margin: auto;
+    background-position: top;
+    background-size: 100%;
+  }
+
+  .form_div {
+    padding: 16px;
+
+    ion-item {
+      --padding-start: 0px;
+    }
+
+    ion-label {
+      font-size: 14px;
+      color: gray;
+    }
+
+    .change {
+      position: absolute;
+      right: 0;
+      bottom: 10px;
+      font-size: 14px;
+      color: var(--ion-color-primary);
+    }
+
+    .gender_div {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      margin-top: 20px;
+
+      .s_div {
+        display: flex;
+        width: 100%;
+        padding-left: 20px;
+
+        ion-label {
+          padding-left: 15px;
+          padding-right: 5px;
+        }
+      }
+    }
+  }
+
+  .gray_div {
+    background: #f3f3f3;
+
+    ion-label {
+      color: gray;
+      font-size: 12px;
+      padding: 16px;
+      font-weight: 500;
+    }
+  }
+}
+
+ion-toolbar{
+  background-color: var(--ion-color-chat);
+}
